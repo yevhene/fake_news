@@ -1,4 +1,4 @@
-defmodule FakeNewsWeb.ArticleLive.Index do
+defmodule FakeNewsWeb.PageLive do
   use FakeNewsWeb, :live_view
 
   @impl true
