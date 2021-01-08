@@ -13,8 +13,13 @@ config :fake_news,
 # Configures the endpoint
 config :fake_news, FakeNewsWeb.Endpoint,
   url: [host: "localhost"],
-  secret_key_base: "wOUuQq7uEXZpCMrDQ4jWUEqBBL6OFf9MAGta4QsEk1sfQKEuIjNubo1DDZkCYc2H",
-  render_errors: [view: FakeNewsWeb.ErrorView, accepts: ~w(html json), layout: false],
+  secret_key_base:
+    "wOUuQq7uEXZpCMrDQ4jWUEqBBL6OFf9MAGta4QsEk1sfQKEuIjNubo1DDZkCYc2H",
+  render_errors: [
+    view: FakeNewsWeb.ErrorView,
+    accepts: ~w(html json),
+    layout: false
+  ],
   pubsub_server: FakeNews.PubSub,
   live_view: [signing_salt: "k9D4WBdK"]
 

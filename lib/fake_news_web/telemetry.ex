@@ -32,7 +32,10 @@ defmodule FakeNewsWeb.Telemetry do
 
       # Database Metrics
       summary("fake_news.repo.query.total_time", unit: {:native, :millisecond}),
-      summary("fake_news.repo.query.decode_time", unit: {:native, :millisecond}),
+      summary(
+        "fake_news.repo.query.decode_time",
+        unit: {:native, :millisecond}
+      ),
       summary("fake_news.repo.query.query_time", unit: {:native, :millisecond}),
       summary("fake_news.repo.query.queue_time", unit: {:native, :millisecond}),
       summary("fake_news.repo.query.idle_time", unit: {:native, :millisecond}),
@@ -48,7 +51,8 @@ defmodule FakeNewsWeb.Telemetry do
   defp periodic_measurements do
     [
       # A module, function and arguments to be invoked periodically.
-      # This function must call :telemetry.execute/3 and a metric must be added above.
+      # This function must call :telemetry.execute/3 and a metric must be
+      # added above.
       # {FakeNewsWeb, :count_users, []}
     ]
   end
