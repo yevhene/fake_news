@@ -17,7 +17,10 @@ defmodule FakeNewsWeb.Router do
   scope "/", FakeNewsWeb do
     pipe_through :browser
 
-    live "/", PageLive, :index
+    live "/", NewsLive.Post.Index, :index
+    live "/news/posts/new", NewsLive.Post.New, :new
+    live "/news/posts/:id", NewsLive.Post.Show, :show
+    live "/news/posts/:id/edit", NewsLive.Post.Edit, :edit
   end
 
   # Other scopes may use custom stacks.

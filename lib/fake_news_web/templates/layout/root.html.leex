@@ -12,7 +12,14 @@
   <body>
     <nav class="navbar navbar-dark bg-primary">
       <div class="container-fluid">
-        <a class="navbar-brand" href="/">FakeNews</a>
+        <%= live_redirect to: Routes.news_post_index_path(@conn, :index), class: "navbar-brand" do %>
+          <span><%= gettext "FakeNews" %><span>
+        <% end %>
+
+        <%= live_redirect to: Routes.news_post_new_path(@conn, :new), class: "btn btn-outline-light" do %>
+          <i class="fas fa-plus" aria-hidden="true"></i>
+          <span><%= gettext "New Post" %><span>
+        <% end %>
       </div>
     </nav>
 

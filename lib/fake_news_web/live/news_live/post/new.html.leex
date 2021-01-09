@@ -1,0 +1,5 @@
+<div class="my-3">
+  <h1 class="display-4"><%= gettext("New Post") %></h1>
+</div>
+
+<%= live_component @socket, FakeNewsWeb.NewsLive.Post.Components.Form, changeset: @changeset %>

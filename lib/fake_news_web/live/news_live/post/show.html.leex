@@ -1,0 +1,29 @@
+<div class="my-3">
+  <h1 class="display-4">
+    <%= gettext("Post %{title}", title: @post.title) %>
+
+    <div class="btn-group" role="group">
+      <%= live_redirect to: Routes.news_post_edit_path(@socket, :edit, @post.id), class: "btn btn-primary" do %>
+        <%= gettext "Edit" %>
+      <% end %>
+      <button type="button" class="btn btn-danger" phx-click="delete" data-confirm="<%= gettext("Really?") %>">
+        <%= gettext "Delete" %>
+      </button>
+    </div>
+  </h1>
+</div>
+
+<section class="mb-3">
+  <h3><%= gettext("Image") %></h3>
+  <img src="<%= @post.image_url %>" class="col-3" />
+</section>
+
+<section class="mb-3">
+  <h3><%= gettext("Short") %></h3>
+  <%= @post.short %>
+</section>
+
+<section class="mb-3">
+  <h3><%= gettext("Content") %></h3>
+  <%= @post.content %>
+</section>

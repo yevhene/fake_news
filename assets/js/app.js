@@ -20,6 +20,14 @@ import {LiveSocket} from "phoenix_live_view"
 let csrfToken = document.querySelector("meta[name='csrf-token']").getAttribute("content")
 let liveSocket = new LiveSocket("/live", Socket, {params: {_csrf_token: csrfToken}})
 
+// Bootstrap
+import "bootstrap"
+
+// FontAwesome
+import { library } from "@fortawesome/fontawesome"
+import { faPlus, faAngleDoubleRight } from "@fortawesome/fontawesome-free-solid"
+library.add(faPlus, faAngleDoubleRight)
+
 // Show progress bar on live navigation and form submits
 topbar.config({barColors: {0: "#29d"}, shadowColor: "rgba(0, 0, 0, .3)"})
 window.addEventListener("phx:page-loading-start", info => topbar.show())

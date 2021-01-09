@@ -1,0 +1,21 @@
+<div class="bg-light p-5 rounded m-3">
+  <h1 class="display-4">Hello!</h1>
+</div>
+
+<div class="row row-cols-1 row-cols-md-3 g-4">
+  <%= for post <- @posts do %>
+    <div class="col">
+      <div class="card" style="width: 18rem;">
+        <img src="<%= post.image_url %>" class="card-img-top" />
+        <div class="card-body">
+          <h5 class="card-title"><%= post.title %></h5>
+          <p class="card-text"><%= post.short %></p>
+          <%= live_redirect to: Routes.news_post_show_path(@socket, :show, post.id), class: "btn btn-primary" do %>
+            <span><%= gettext "More" %><span>
+            <i class="fas fa-angle-double-right" aria-hidden="true"></i>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>
